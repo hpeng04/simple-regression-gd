@@ -1,0 +1,10 @@
+Simple Regression Gradient Descent
+
+Machine learning regression implemented using Python, Pandas, Numpy, and Matplotlib for visualization. Batch gradient descent algorithm used.
+
+The following parameters are adjustable as constants within main.py
+- INITIAL_WEIGHT
+- INITIAL_BIAS
+- NUM_ITERATIONS
+- LEARNING_RATE
+- FPS (Matplotlib animation frames per second)
