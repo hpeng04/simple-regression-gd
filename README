@@ -1,10 +1,84 @@
-Simple Regression Gradient Descent
+# Simple Linear Regression with Gradient Descent
 
-Machine learning regression implemented using Python, Pandas, Numpy, and Matplotlib for visualization. Batch gradient descent algorithm used.
+This project demonstrates linear regression implemented with batch gradient descent, featuring various visualizations of the training process including **MSE trend animations** and static plots.
 
-The following parameters are adjustable as constants within main.py
-- INITIAL_WEIGHT
-- INITIAL_BIAS
-- NUM_ITERATIONS
-- LEARNING_RATE
-- FPS (Matplotlib animation frames per second)
+## Features
+
+### 1. **Regression Line Animation**
+- Shows how the regression line evolves during training
+- Visualizes the line fitting to the data points over epochs
+- Real-time display of MSE and MAE values
+
+### 2. **MSE Trend Animation** ⭐ NEW!
+- Animated plot showing how Mean Squared Error decreases over epochs
+- Real-time tracking of current epoch and MSE value
+- Visual representation of the convergence process
+
+### 3. **MSE Trend Static Plot** ⭐ NEW!
+- Complete overview of MSE trend across all epochs
+- Includes both linear and log-scale views for better convergence analysis
+- Provides detailed statistics including:
+  - Initial and final MSE values
+  - Percentage reduction in error
+  - Minimum MSE achieved and at which epoch
+
+## Usage
+
+### Main Script
+```bash
+python main.py
+```
+This will present you with options to choose from:
+1. Regression line animation
+2. MSE trend animation  
+3. MSE trend static plot
+4. All visualizations
+
+### Direct Scripts
+For quick access to specific visualizations:
+
+**MSE Animation Only:**
+```bash
+python mse_animation.py
+```
+
+**MSE Static Plot Only:**
+```bash
+python mse_plot.py
+```
+
+## Configuration
+
+You can modify the training parameters in `main.py`:
+
+- `NUM_EPOCHS`: Number of training epochs (default: 250)
+- `LEARNING_RATE`: Learning rate for gradient descent (default: 0.001)
+- `INITIAL_WEIGHT`: Starting weight value (default: 0)
+- `INITIAL_BIAS`: Starting bias value (default: 0)
+- `FPS`: Animation frame rate (default: 40)
+- `BATCH_SIZE`: Batch size for gradient descent (default: 1)
+
+## Data Format
+
+The script expects a CSV file named `data.csv` with columns:
+- `x`: Input features
+- `y`: Target values
+
+## Dependencies
+
+- pandas
+- numpy
+- matplotlib
+
+## Algorithm Details
+
+The implementation uses batch gradient descent to minimize the mean squared error:
+- Loss function: MSE = (1/n) * Σ(y_actual - y_predicted)²
+- Weight update: w = w - learning_rate * ∂MSE/∂w
+- Bias update: b = b - learning_rate * ∂MSE/∂b
+
+The MSE trend visualization helps you understand:
+- How quickly the model converges
+- Whether the learning rate is appropriate
+- If the model has reached convergence
+- The final accuracy achieved
